@@ -1,0 +1,99 @@
+@use '~bootstrap/scss/bootstrap';
+
+.navbar {
+  list-style-type: none;
+
+}
+.navbar a{
+  color:white;
+}
+.navbar .nav-link{
+  color: white;
+}
+.edit-row{
+  justify-content: center;
+}
+.userinfo-name{
+
+  border-top: 1px solid black;
+  margin-bottom:0px;
+}
+.userinfo-intro{
+  border-top: 1px solid black;
+  margin-bottom:0px;
+}
+.table-head{
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+table{
+  width: 100%;
+}
+.user-edit{
+  text-align: center;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+.login-btn{
+  background-color: #17a2b8;
+  text-align: center;
+  margin-bottom: 13px;
+}
+.login-btn a{
+  color: white;
+  background-color: #17a2b8;
+
+}
+.login-btn2{
+  background-color: #0069D9;
+  color: white;
+}
+.signup-btn{
+  background-color: #28a745;
+  text-align: center;
+}
+.signup-btn a{
+  background-color: #28a745;
+  color: white;
+}
+.signup-btn2{
+  background-color: #28A745;
+  color: white;
+}
+.footer{
+  text-align: center;
+}
+
+.about-row{
+  justify-content: center;
+}
+.show-edit-btn{
+  background-color: green;
+  color: white;
+  padding: 2px;
+}
+.show-destroy-btn{
+  background-color: red;
+  color: white;
+  padding: 2px;
+}
+
+.book-detail{
+  border-bottom: 1px solid gray;
+}
+.fa-user-gear{
+  color:gray;
+}
+.create-box {
+  background-color: green;
+  color: white;
+}
+
+.update-book{
+  background-color: green;
+  color: white;
+}
+.update-user{
+  background-color: gray;
+  color: white;
+}

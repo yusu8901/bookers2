@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row edit-row">
+    <div class="col-5">
+      <h2>Editing Book</h2>
+      <%= form_with model: @book_new do |f| %>
+        <div class="title-edit ">
+          <label for="inputTitle">Title</label>
+          <br>
+          <div class="form-controll">
+            <%= f.text_field :title, autofocus: true, id:"inputtitle", placeholder:"title"%>
+          </div>
+
+        </div>
+
+
+
+        <div class="body-edit">
+          <label for="inputBody">Opinion</label>
+          <br>
+          <%= f.text_area :body, placeholder: "inputBody", accept: "body" %>
+        </div>
+
+
+        <%= f.submit "Update Book" , class: "update-book" %>
+      <% end %>
+      <%= link_to 'Show', book_path(@book_new)  %>
+      <%= link_to 'Back', books_path  %>
+    </div>
+  </div>
+
+</div>
+

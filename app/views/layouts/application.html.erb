@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+
+    <script src="https://kit.fontawesome.com/2411e6e410.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar" style="background-color: #343A40;">
+        <div class="container">
+          <%= link_to 'Bookers', root_path %>
+          <ul class="navbar ">
+
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to user_path(current_user) , class: 'nav-link' do %>
+
+                  <p><i class="fa-solid fa-house"></i>Home</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  users_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-users"></i>Users</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to books_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-book-open"></i>Books</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-right-from-bracket"></i>Log out</p>
+                <% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to  root_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-house"></i>Home</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  about_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-link"></i>About</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_registration_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-user-plus"></i>Sign up</p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to  new_user_session_path, class: 'nav-link' do %>
+                  <p><i class="fa-solid fa-right-to-bracket"></i>Log in</p>
+                <% end %>
+              </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div>
+      <%= flash[:notice] %>
+      <% if @book_new && @book_new.errors.any? %>
+        <%= @book_new.errors.count %>errors prohibited this obj from being saved:
+        <ul>
+          <% @book_new.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if @user && @user.errors.any? %>
+        <%= @user.errors.count %>errors prohibited this obj from being saved:
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <%= yield %>
+    <p class="footer">CopyRight Infratop.inc</p>
+  </body>
+</html>
